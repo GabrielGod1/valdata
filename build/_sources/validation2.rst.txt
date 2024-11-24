@@ -1,0 +1,12 @@
+Validation Module
+=================
+
+.. module:: valdata.validation
+   :synopsis: A test for the validation module.
+
+Module Functions
+-----------------
+
+.. function:: valdata.validation.validate_data()
+
+   This function validates the provided data.

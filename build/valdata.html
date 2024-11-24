@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>valdata package &#8212; valdata 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="valdata - Data validation and consistency toolkit" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="valdata-package">
+<h1>valdata package<a class="headerlink" href="#valdata-package" title="Link to this heading">¶</a></h1>
+<section id="module-valdata.auxiliary">
+<span id="valdata-auxiliary-module"></span><h2>valdata.auxiliary module<a class="headerlink" href="#module-valdata.auxiliary" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.auxiliary.check_type">
+<span class="sig-prename descclassname"><span class="pre">valdata.auxiliary.</span></span><span class="sig-name descname"><span class="pre">check_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#valdata.auxiliary.check_type" title="Link to this definition">¶</a></dt>
+<dd><p>Checks the type of the given item and returns its name as a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>item</strong> – The item whose type is to be checked.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A string indicating the type of the item.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.auxiliary.now_timedelta">
+<span class="sig-prename descclassname"><span class="pre">valdata.auxiliary.</span></span><span class="sig-name descname"><span class="pre">now_timedelta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datetime</span></span></span><a class="headerlink" href="#valdata.auxiliary.now_timedelta" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the current time in the ‘dd-MonthAb-yy hh:mm:ss AM/PM’ format for the ‘America/Bogota’ timezone.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current time in the ‘America/Bogota’ timezone as a datetime object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.auxiliary.path_correction">
+<span class="sig-prename descclassname"><span class="pre">valdata.auxiliary.</span></span><span class="sig-name descname"><span class="pre">path_correction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#valdata.auxiliary.path_correction" title="Link to this definition">¶</a></dt>
+<dd><p>Corrects the path by replacing backslashes with forward slashes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – The file path to be corrected.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The corrected path with forward slashes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-valdata.utils">
+<span id="valdata-utils-module"></span><h2>valdata.utils module<a class="headerlink" href="#module-valdata.utils" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.utils.add_module_path">
+<span class="sig-prename descclassname"><span class="pre">valdata.utils.</span></span><span class="sig-name descname"><span class="pre">add_module_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#valdata.utils.add_module_path" title="Link to this definition">¶</a></dt>
+<dd><p>Adds a new module path to the Python module search path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>module_path</strong> – The path to the directory to add to the module search path.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.utils.check_directory">
+<span class="sig-prename descclassname"><span class="pre">valdata.utils.</span></span><span class="sig-name descname"><span class="pre">check_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_if_not_exists</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#valdata.utils.check_directory" title="Link to this definition">¶</a></dt>
+<dd><p>Checks if a directory exists at the given path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>directory_path</strong> – str - The directory path to check.</p></li>
+<li><p><strong>create_if_not_exists</strong> – bool - Flag to create the directory if it doesn’t exist. Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><p>check_directory(‘/path/to/directory’, create_if_not_exists=True)  # Creates the directory if it does not exist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.utils.get_directories">
+<span class="sig-prename descclassname"><span class="pre">valdata.utils.</span></span><span class="sig-name descname"><span class="pre">get_directories</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Current'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#valdata.utils.get_directories" title="Link to this definition">¶</a></dt>
+<dd><p>Displays the contents of the specified directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>directory_path</strong> – The directory to list contents of. If ‘Current’, the current working directory is used.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.utils.get_hadoop_version">
+<span class="sig-prename descclassname"><span class="pre">valdata.utils.</span></span><span class="sig-name descname"><span class="pre">get_hadoop_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#valdata.utils.get_hadoop_version" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves and prints the versions of Python, Hadoop, Spark, and PySpark.</p>
+<p>This function attempts to get the version of Hadoop using the ‘hadoop version’ command,
+the version of Spark through the SparkSession, and the version of PySpark from the pyspark library.</p>
+<p>If Hadoop is not installed or if there is an error during execution, it will handle the error gracefully.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.utils.get_modules">
+<span class="sig-prename descclassname"><span class="pre">valdata.utils.</span></span><span class="sig-name descname"><span class="pre">get_modules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#valdata.utils.get_modules" title="Link to this definition">¶</a></dt>
+<dd><p>Prints the currently loaded modules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.utils.read_file">
+<span class="sig-prename descclassname"><span class="pre">valdata.utils.</span></span><span class="sig-name descname"><span class="pre">read_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#valdata.utils.read_file" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.utils.save_file">
+<span class="sig-prename descclassname"><span class="pre">valdata.utils.</span></span><span class="sig-name descname"><span class="pre">save_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#valdata.utils.save_file" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-valdata.validation">
+<span id="valdata-validation-module"></span><h2>valdata.validation module<a class="headerlink" href="#module-valdata.validation" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.validation.check_variables">
+<span class="sig-prename descclassname"><span class="pre">valdata.validation.</span></span><span class="sig-name descname"><span class="pre">check_variables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfs_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_comparison</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#valdata.validation.check_variables" title="Link to this definition">¶</a></dt>
+<dd><p>Compares the variables (columns) of multiple DataFrames, with an option to compare to a reference DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dfs_dict</strong> – dict - A dictionary where keys are DataFrame names (str) and values are the DataFrames (pd.DataFrame or Spark DataFrame) to compare.</p></li>
+<li><p><strong>df_comparison</strong> – str or None - The name of the reference DataFrame to compare against. If None, all DataFrames are compared against each other.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None - Prints a table showing the columns of each DataFrame and highlights any discrepancies.</p>
+</dd>
+</dl>
+<p>Functionality:
+1. <strong>Column Comparison</strong>:
+- If <cite>df_comparison</cite> is provided, compares the columns of the specified DataFrame (<cite>df_comparison</cite>) with the other DataFrames in <cite>dfs_dict</cite>.
+- If <cite>df_comparison</cite> is not provided, compares all DataFrames against each other.</p>
+<p>2. <strong>Missing Columns</strong>:
+- The table will show ‘Error’ for missing columns in the reference DataFrame (<cite>df_comparison</cite>), or ‘…’ for missing columns in other DataFrames when not in <cite>df_comparison</cite>.</p>
+<p>3. <strong>Output Format</strong>:
+- Displays a formatted table showing the column names of all DataFrames and their alignment. Missing or differing columns are highlighted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dfs_dict = {‘df_name_1’: df1, ‘df_name_2’: df2, ‘df_comparison’: df_ref}
+check_variables(dfs_dict, df_comparison=’df_comparison’)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.validation.equal_df">
+<span class="sig-prename descclassname"><span class="pre">valdata.validation.</span></span><span class="sig-name descname"><span class="pre">equal_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregated</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#valdata.validation.equal_df" title="Link to this definition">¶</a></dt>
+<dd><p>Compare two Pandas DataFrames for equality, either element-wise or aggregated by columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df1</strong> – pd.DataFrame - The first DataFrame to compare.</p></li>
+<li><p><strong>df2</strong> – pd.DataFrame - The second DataFrame to compare.</p></li>
+<li><p><strong>aggregated</strong> – bool - Determines the level of comparison.
+- If False, performs a full element-wise comparison, printing <cite>True</cite> if all elements across both DataFrames match, and <cite>False</cite> if any mismatch is found.
+- If True, performs an aggregated comparison, outputting a DataFrame showing <cite>True</cite> or <cite>False</cite> values for each cell, indicating equality by column for every row.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.validation.equal_df_mult">
+<span class="sig-prename descclassname"><span class="pre">valdata.validation.</span></span><span class="sig-name descname"><span class="pre">equal_df_mult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfs_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_comparison</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#valdata.validation.equal_df_mult" title="Link to this definition">¶</a></dt>
+<dd><p>Compare multiple DataFrames to a reference DataFrame for structural and row-wise equality.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dfs_dict</strong> – dict - Dictionary where keys are DataFrame names (str) and values are the DataFrames (pd.DataFrame or Spark DataFrame) to compare.</p></li>
+<li><p><strong>df_comparison</strong> – str - The name of the reference DataFrame within dfs_dict that other DataFrames will be compared against.</p></li>
+<li><p><strong>row_count</strong> – bool - If True, includes row count for each DataFrame in the comparison output; if False, omits row count details.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None - Prints a summary of comparison results for each DataFrame in dfs_dict against the reference DataFrame.</p>
+</dd>
+</dl>
+<p>Functionality:
+1. <strong>Column Comparison</strong>:
+- Checks if the reference DataFrame (<cite>df_comparison</cite>) and each other DataFrame in <cite>dfs_dict</cite> have the same number of columns.
+- Skips the comparison if the column counts differ.</p>
+<p>2. <strong>Row Comparison</strong>:
+- Uses <cite>.exceptAll()</cite> for Spark DataFrames to identify row-wise differences between the reference and each other DataFrame, handling duplicates and row order.</p>
+<p>3. <strong>Output Format</strong>:
+- For identical DataFrames, outputs a checkmark (✓) indicating that both DataFrames have the same shape and no different rows.
+- For differing DataFrames, outputs an error (X) with row mismatch details.
+- If <cite>row_count</cite> is True, includes row counts for each DataFrame; otherwise, displays “Omitted” in place of row counts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dfs_dict = {‘df_name_1’: df1, ‘df_name_2’: df2, ‘df_name_comparison’: df_ref}
+equal_df_mult(dfs_dict, ‘df_name_comparison’, row_count=True)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.validation.get_overview">
+<span class="sig-prename descclassname"><span class="pre">valdata.validation.</span></span><span class="sig-name descname"><span class="pre">get_overview</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#valdata.validation.get_overview" title="Link to this definition">¶</a></dt>
+<dd><p>Prints an overview of the given DataFrame, whether it’s a Pandas or Spark DataFrame, including its shape, type, head and composition (Variables, unique counts and unique values).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> – The DataFrame to be analyzed (Pandas or Spark).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.validation.get_pandas_schemaStr">
+<span class="sig-prename descclassname"><span class="pre">valdata.validation.</span></span><span class="sig-name descname"><span class="pre">get_pandas_schemaStr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#valdata.validation.get_pandas_schemaStr" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a schema-like representation of a Pandas DataFrame, similar to the Spark DataFrame schema.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> – The Pandas DataFrame to extract schema from.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A string representation of the DataFrame’s schema.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.validation.now">
+<span class="sig-prename descclassname"><span class="pre">valdata.validation.</span></span><span class="sig-name descname"><span class="pre">now</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#valdata.validation.now" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the current time in the ‘dd-MonthAb-yy hh:mm:ss AM/PM’ format for the ‘America/Bogota’ timezone.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current time as a formatted string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.validation.show_pandas_as_table">
+<span class="sig-prename descclassname"><span class="pre">valdata.validation.</span></span><span class="sig-name descname"><span class="pre">show_pandas_as_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rows</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#valdata.validation.show_pandas_as_table" title="Link to this definition">¶</a></dt>
+<dd><p>Display a Pandas DataFrame or Series in a tabular format, similar to the way Spark shows DataFrames.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – The Pandas DataFrame or Series to display.</p></li>
+<li><p><strong>num_rows</strong> – The number of rows to display. Default is 5.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.validation.tblt_concentrations">
+<span class="sig-prename descclassname"><span class="pre">valdata.validation.</span></span><span class="sig-name descname"><span class="pre">tblt_concentrations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conditioner</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresholds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#valdata.validation.tblt_concentrations" title="Link to this definition">¶</a></dt>
+<dd><p>Tabulates the concentration of data for a variable given a set of thresholds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – The DataFrame containing the data to be analyzed.</p></li>
+<li><p><strong>conditioner</strong> – The name of the column used as a condition for filtering.</p></li>
+<li><p><strong>thresholds</strong> – A list of threshold values to evaluate the concentration.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.validation.tblt_ocurrences">
+<span class="sig-prename descclassname"><span class="pre">valdata.validation.</span></span><span class="sig-name descname"><span class="pre">tblt_ocurrences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conditionated</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#valdata.validation.tblt_ocurrences" title="Link to this definition">¶</a></dt>
+<dd><p>Tabulates the occurrence of values in a specific variable or variables.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df_columns</strong> – A list of Series or DataFrame columns to tabulate.
+The first item is the variable of interest, and the second item is the condition (if any).</p></li>
+<li><p><strong>conditionated</strong> – A boolean indicating whether to tabulate conditioned on a second variable.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.validation.tms_0">
+<span class="sig-prename descclassname"><span class="pre">valdata.validation.</span></span><span class="sig-name descname"><span class="pre">tms_0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#valdata.validation.tms_0" title="Link to this definition">¶</a></dt>
+<dd><p>Initializes the start time for the valdata process by setting the global variable ‘valdata_start_time’ to the current time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.validation.tms_1">
+<span class="sig-prename descclassname"><span class="pre">valdata.validation.</span></span><span class="sig-name descname"><span class="pre">tms_1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#valdata.validation.tms_1" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates and prints the elapsed time since ‘tms_0’ in the format ‘days - hours:minutes:seconds’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.validation.unique_values">
+<span class="sig-prename descclassname"><span class="pre">valdata.validation.</span></span><span class="sig-name descname"><span class="pre">unique_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#valdata.validation.unique_values" title="Link to this definition">¶</a></dt>
+<dd><p>Prints the unique values of each column in the given DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> – The DataFrame for which to display unique values.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-valdata.visuals">
+<span id="valdata-visuals-module"></span><h2>valdata.visuals module<a class="headerlink" href="#module-valdata.visuals" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="valdata.visuals.TextStyle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">valdata.visuals.</span></span><span class="sig-name descname"><span class="pre">TextStyle</span></span><a class="headerlink" href="#valdata.visuals.TextStyle" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valdata.visuals.TextStyle.BLACK">
+<span class="sig-name descname"><span class="pre">BLACK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[30m'</span></em><a class="headerlink" href="#valdata.visuals.TextStyle.BLACK" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valdata.visuals.TextStyle.BLUE">
+<span class="sig-name descname"><span class="pre">BLUE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[34m'</span></em><a class="headerlink" href="#valdata.visuals.TextStyle.BLUE" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valdata.visuals.TextStyle.BOLD">
+<span class="sig-name descname"><span class="pre">BOLD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[1m'</span></em><a class="headerlink" href="#valdata.visuals.TextStyle.BOLD" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valdata.visuals.TextStyle.CYAN">
+<span class="sig-name descname"><span class="pre">CYAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[36m'</span></em><a class="headerlink" href="#valdata.visuals.TextStyle.CYAN" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valdata.visuals.TextStyle.GREEN">
+<span class="sig-name descname"><span class="pre">GREEN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[32m'</span></em><a class="headerlink" href="#valdata.visuals.TextStyle.GREEN" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valdata.visuals.TextStyle.ITALIC">
+<span class="sig-name descname"><span class="pre">ITALIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[3m'</span></em><a class="headerlink" href="#valdata.visuals.TextStyle.ITALIC" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valdata.visuals.TextStyle.MAGENTA">
+<span class="sig-name descname"><span class="pre">MAGENTA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[35m'</span></em><a class="headerlink" href="#valdata.visuals.TextStyle.MAGENTA" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valdata.visuals.TextStyle.RED">
+<span class="sig-name descname"><span class="pre">RED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[31m'</span></em><a class="headerlink" href="#valdata.visuals.TextStyle.RED" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valdata.visuals.TextStyle.RESET">
+<span class="sig-name descname"><span class="pre">RESET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[0m'</span></em><a class="headerlink" href="#valdata.visuals.TextStyle.RESET" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valdata.visuals.TextStyle.UNDERLINE">
+<span class="sig-name descname"><span class="pre">UNDERLINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[4m'</span></em><a class="headerlink" href="#valdata.visuals.TextStyle.UNDERLINE" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valdata.visuals.TextStyle.WHITE">
+<span class="sig-name descname"><span class="pre">WHITE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[37m'</span></em><a class="headerlink" href="#valdata.visuals.TextStyle.WHITE" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="valdata.visuals.TextStyle.YELLOW">
+<span class="sig-name descname"><span class="pre">YELLOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[33m'</span></em><a class="headerlink" href="#valdata.visuals.TextStyle.YELLOW" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.visuals.b">
+<span class="sig-prename descclassname"><span class="pre">valdata.visuals.</span></span><span class="sig-name descname"><span class="pre">b</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#valdata.visuals.b" title="Link to this definition">¶</a></dt>
+<dd><p>Prints the given text as bold.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text</strong> – The text to be printed in bold.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The formatted bold text as a string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.visuals.b_bl">
+<span class="sig-prename descclassname"><span class="pre">valdata.visuals.</span></span><span class="sig-name descname"><span class="pre">b_bl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#valdata.visuals.b_bl" title="Link to this definition">¶</a></dt>
+<dd><p>Prints the given text as bold blue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text</strong> – The text to be printed in bold blue.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The formatted bold blue text as a string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.visuals.b_gr">
+<span class="sig-prename descclassname"><span class="pre">valdata.visuals.</span></span><span class="sig-name descname"><span class="pre">b_gr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#valdata.visuals.b_gr" title="Link to this definition">¶</a></dt>
+<dd><p>Prints the given text as bold green.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text</strong> – The text to be printed in bold green.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The formatted bold green text as a string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.visuals.b_re">
+<span class="sig-prename descclassname"><span class="pre">valdata.visuals.</span></span><span class="sig-name descname"><span class="pre">b_re</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#valdata.visuals.b_re" title="Link to this definition">¶</a></dt>
+<dd><p>Prints the given text as bold red.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text</strong> – The text to be printed in bold red.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The formatted bold red text as a string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="valdata.visuals.set_start">
+<span class="sig-prename descclassname"><span class="pre">valdata.visuals.</span></span><span class="sig-name descname"><span class="pre">set_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#valdata.visuals.set_start" title="Link to this definition">¶</a></dt>
+<dd><p>Initializes the environment by printing a message, the current time, and the Python version. It also sets custom styles for Jupyter Notebook cells.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>msg</strong> – Optional message to be printed at the start. Defaults to an empty string.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">valdata</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">valdata package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-valdata.auxiliary">valdata.auxiliary module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.auxiliary.check_type"><code class="docutils literal notranslate"><span class="pre">check_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.auxiliary.now_timedelta"><code class="docutils literal notranslate"><span class="pre">now_timedelta()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.auxiliary.path_correction"><code class="docutils literal notranslate"><span class="pre">path_correction()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-valdata.utils">valdata.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.utils.add_module_path"><code class="docutils literal notranslate"><span class="pre">add_module_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.utils.check_directory"><code class="docutils literal notranslate"><span class="pre">check_directory()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.utils.get_directories"><code class="docutils literal notranslate"><span class="pre">get_directories()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.utils.get_hadoop_version"><code class="docutils literal notranslate"><span class="pre">get_hadoop_version()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.utils.get_modules"><code class="docutils literal notranslate"><span class="pre">get_modules()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.utils.read_file"><code class="docutils literal notranslate"><span class="pre">read_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.utils.save_file"><code class="docutils literal notranslate"><span class="pre">save_file()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-valdata.validation">valdata.validation module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.validation.check_variables"><code class="docutils literal notranslate"><span class="pre">check_variables()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.validation.equal_df"><code class="docutils literal notranslate"><span class="pre">equal_df()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.validation.equal_df_mult"><code class="docutils literal notranslate"><span class="pre">equal_df_mult()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.validation.get_overview"><code class="docutils literal notranslate"><span class="pre">get_overview()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.validation.get_pandas_schemaStr"><code class="docutils literal notranslate"><span class="pre">get_pandas_schemaStr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.validation.now"><code class="docutils literal notranslate"><span class="pre">now()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.validation.show_pandas_as_table"><code class="docutils literal notranslate"><span class="pre">show_pandas_as_table()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.validation.tblt_concentrations"><code class="docutils literal notranslate"><span class="pre">tblt_concentrations()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.validation.tblt_ocurrences"><code class="docutils literal notranslate"><span class="pre">tblt_ocurrences()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.validation.tms_0"><code class="docutils literal notranslate"><span class="pre">tms_0()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.validation.tms_1"><code class="docutils literal notranslate"><span class="pre">tms_1()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.validation.unique_values"><code class="docutils literal notranslate"><span class="pre">unique_values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-valdata.visuals">valdata.visuals module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.visuals.TextStyle"><code class="docutils literal notranslate"><span class="pre">TextStyle</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#valdata.visuals.TextStyle.BLACK"><code class="docutils literal notranslate"><span class="pre">TextStyle.BLACK</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#valdata.visuals.TextStyle.BLUE"><code class="docutils literal notranslate"><span class="pre">TextStyle.BLUE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#valdata.visuals.TextStyle.BOLD"><code class="docutils literal notranslate"><span class="pre">TextStyle.BOLD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#valdata.visuals.TextStyle.CYAN"><code class="docutils literal notranslate"><span class="pre">TextStyle.CYAN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#valdata.visuals.TextStyle.GREEN"><code class="docutils literal notranslate"><span class="pre">TextStyle.GREEN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#valdata.visuals.TextStyle.ITALIC"><code class="docutils literal notranslate"><span class="pre">TextStyle.ITALIC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#valdata.visuals.TextStyle.MAGENTA"><code class="docutils literal notranslate"><span class="pre">TextStyle.MAGENTA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#valdata.visuals.TextStyle.RED"><code class="docutils literal notranslate"><span class="pre">TextStyle.RED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#valdata.visuals.TextStyle.RESET"><code class="docutils literal notranslate"><span class="pre">TextStyle.RESET</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#valdata.visuals.TextStyle.UNDERLINE"><code class="docutils literal notranslate"><span class="pre">TextStyle.UNDERLINE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#valdata.visuals.TextStyle.WHITE"><code class="docutils literal notranslate"><span class="pre">TextStyle.WHITE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#valdata.visuals.TextStyle.YELLOW"><code class="docutils literal notranslate"><span class="pre">TextStyle.YELLOW</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.visuals.b"><code class="docutils literal notranslate"><span class="pre">b()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.visuals.b_bl"><code class="docutils literal notranslate"><span class="pre">b_bl()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.visuals.b_gr"><code class="docutils literal notranslate"><span class="pre">b_gr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.visuals.b_re"><code class="docutils literal notranslate"><span class="pre">b_re()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valdata.visuals.set_start"><code class="docutils literal notranslate"><span class="pre">set_start()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">valdata - Data validation and consistency toolkit</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, gabrielgod1.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.0.2</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/valdata.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

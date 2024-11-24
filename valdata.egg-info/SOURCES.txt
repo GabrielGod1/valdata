@@ -1,0 +1,12 @@
+README.md
+setup.py
+valdata/__init__.py
+valdata/auxiliary.py
+valdata/utils.py
+valdata/validation.py
+valdata/visuals.py
+valdata.egg-info/PKG-INFO
+valdata.egg-info/SOURCES.txt
+valdata.egg-info/dependency_links.txt
+valdata.egg-info/requires.txt
+valdata.egg-info/top_level.txt

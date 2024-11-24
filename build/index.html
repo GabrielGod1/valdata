@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>valdata - Data validation and consistency toolkit &#8212; valdata 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="valdata package" href="valdata.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="valdata-data-validation-and-consistency-toolkit">
+<span id="valdata"></span><h1>valdata - Data validation and consistency toolkit<a class="headerlink" href="#valdata-data-validation-and-consistency-toolkit" title="Link to this heading">¶</a></h1>
+<p><strong>valdata</strong> is a robust Python package developed to streamline data validation and consistency checks across various data structures and environments, particularly those used in financial and risk analysis. By providing structured data insights, comparisons, and file management capabilities, <cite>valdata</cite> simplifies data analysis and improves data quality assurance processes.</p>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Compatibility with Pandas and Spark DataFrames</strong>: Ensures easy integration with common data structures.</p></li>
+<li><p><strong>Detailed Data Insights</strong>: View unique values, data types, and column composition for better data understanding.</p></li>
+<li><p><strong>Data Consistency Checks</strong>: Compare multiple DataFrames for equality, validate variables, and analyze column-specific occurrences and concentrations.</p></li>
+<li><p><strong>Flexible File Management</strong>: Seamlessly work with directories and modules, allowing for more efficient data processing.</p></li>
+<li><p><strong>System Compatibility</strong>: Detects versions of relevant software, such as Hadoop, Spark, and PySpark, to help ensure compatibility in distributed computing environments.</p></li>
+</ul>
+</section>
+<section id="use-cases">
+<h2>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Financial Analysis</strong>: Easily validate data from multiple sources, ensuring consistent and accurate datasets for risk assessments or portfolio analysis.</p></li>
+<li><p><strong>Data Audits</strong>: Rapidly identify and troubleshoot discrepancies in datasets, especially useful for large data teams.</p></li>
+<li><p><strong>Risk Management</strong>: Monitor data for anomalies, rare occurrences, or threshold-based concentrations in high-risk datasets.</p></li>
+<li><p><strong>Data Pipeline Debugging</strong>: Detect and correct schema mismatches or data quality issues within ETL (Extract, Transform, Load) processes.</p></li>
+</ul>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h2>
+<p>To install <cite>valdata</cite>, ensure that Python and Spark are set up beforehand. Then, install the package:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>valdata
+</pre></div>
+</div>
+</section>
+<section id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Link to this heading">¶</a></h2>
+<ul>
+<li><p>Auxiliary:</p>
+<p>This module provides utility functions for type checking, path correction, and timezone-aware datetime retrieval. These functions are particularly useful within the library, enabling seamless integration with other module components.</p>
+</li>
+<li><p>Utils:</p>
+<p>This module includes utility functions for managing directories, displaying system information, and integrating with Spark. It provides tools for checking and creating directories, listing contents, managing Python module paths, and retrieving version details for Hadoop, Spark, and PySpark.</p>
+</li>
+<li><p><strong>Validation:</strong></p>
+<p>Module for DataFrame analysis and comparison, supporting both Pandas and Spark DataFrames.</p>
+<p>This module includes functions to track execution time, print DataFrame summaries, compare DataFrames, and tabulate various statistics. It supports operations like counting unique values, checking variable consistency, and comparing DataFrames either element-wise or by structure. It also provides functionality to visualize data distributions and concentrations with thresholds.</p>
+</li>
+<li><p>Visuals:</p>
+<p>This module defines various utility functions and styles for text formatting and Jupyter Notebook customization.</p>
+</li>
+</ul>
+</section>
+<section id="usage-examples">
+<h2>Usage Examples<a class="headerlink" href="#usage-examples" title="Link to this heading">¶</a></h2>
+<p><strong>Example 1: Data Overview</strong></p>
+<p>Analyze a Pandas DataFrame for a summary of its structure and unique values in each column:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">valdata</span> <span class="kn">import</span> <span class="n">get_overview</span>
+
+<span class="c1"># Example DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+  <span class="s1">&#39;ID&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+  <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;David&#39;</span><span class="p">],</span>
+  <span class="s1">&#39;Score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">88</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">75</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">get_overview</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This function provides an instant overview of variables, data types, unique values, and structure.</p>
+<p><strong>Example 2: Data Consistency Comparison</strong></p>
+<p>Compare multiple DataFrames to identify structural and data differences:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">valdata</span> <span class="kn">import</span> <span class="n">equal_df</span><span class="p">,</span> <span class="n">equal_df_mult</span>
+
+<span class="c1"># Create a few DataFrames</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+  <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+  <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Simple comparison</span>
+<span class="n">equal_df</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">)</span>
+
+<span class="c1"># Multiple DataFrame comparison</span>
+<span class="n">dfs_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Reference&#39;</span><span class="p">:</span> <span class="n">df1</span><span class="p">,</span> <span class="s1">&#39;Comparison&#39;</span><span class="p">:</span> <span class="n">df2</span><span class="p">}</span>
+<span class="n">equal_df_mult</span><span class="p">(</span><span class="n">dfs_dict</span><span class="p">,</span> <span class="s1">&#39;Reference&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Example 3: Concentration Analysis</strong></p>
+<p>Evaluate the concentration of data points above a given threshold:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">valdata</span> <span class="kn">import</span> <span class="n">tblt_concentrations</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+  <span class="s1">&#39;Scores&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">55</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">92</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">tblt_concentrations</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;Scores&#39;</span><span class="p">,</span> <span class="n">thresholds</span><span class="o">=</span><span class="p">[</span><span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>This function provides insight into the distribution of values, helping to identify high or low concentration points.</p>
+<p><strong>Note</strong></p>
+<p>You can import the entire <cite>valdata</cite> package using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">valdata</span> <span class="k">as</span> <span class="nn">vd</span>
+</pre></div>
+</div>
+<p>This allows you to access all functions with the <cite>vd.function_name</cite> syntax, so you don’t need to import each function individually. This simplifies your code and makes it easier to work with the full suite of <cite>valdata</cite> tools.</p>
+</section>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="valdata.html">valdata package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="valdata.html#module-valdata.auxiliary">valdata.auxiliary module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.auxiliary.check_type"><code class="docutils literal notranslate"><span class="pre">check_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.auxiliary.now_timedelta"><code class="docutils literal notranslate"><span class="pre">now_timedelta()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.auxiliary.path_correction"><code class="docutils literal notranslate"><span class="pre">path_correction()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="valdata.html#module-valdata.utils">valdata.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.utils.add_module_path"><code class="docutils literal notranslate"><span class="pre">add_module_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.utils.check_directory"><code class="docutils literal notranslate"><span class="pre">check_directory()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.utils.get_directories"><code class="docutils literal notranslate"><span class="pre">get_directories()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.utils.get_hadoop_version"><code class="docutils literal notranslate"><span class="pre">get_hadoop_version()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.utils.get_modules"><code class="docutils literal notranslate"><span class="pre">get_modules()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.utils.read_file"><code class="docutils literal notranslate"><span class="pre">read_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.utils.save_file"><code class="docutils literal notranslate"><span class="pre">save_file()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="valdata.html#module-valdata.validation">valdata.validation module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.validation.check_variables"><code class="docutils literal notranslate"><span class="pre">check_variables()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.validation.equal_df"><code class="docutils literal notranslate"><span class="pre">equal_df()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.validation.equal_df_mult"><code class="docutils literal notranslate"><span class="pre">equal_df_mult()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.validation.get_overview"><code class="docutils literal notranslate"><span class="pre">get_overview()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.validation.get_pandas_schemaStr"><code class="docutils literal notranslate"><span class="pre">get_pandas_schemaStr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.validation.now"><code class="docutils literal notranslate"><span class="pre">now()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.validation.show_pandas_as_table"><code class="docutils literal notranslate"><span class="pre">show_pandas_as_table()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.validation.tblt_concentrations"><code class="docutils literal notranslate"><span class="pre">tblt_concentrations()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.validation.tblt_ocurrences"><code class="docutils literal notranslate"><span class="pre">tblt_ocurrences()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.validation.tms_0"><code class="docutils literal notranslate"><span class="pre">tms_0()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.validation.tms_1"><code class="docutils literal notranslate"><span class="pre">tms_1()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.validation.unique_values"><code class="docutils literal notranslate"><span class="pre">unique_values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="valdata.html#module-valdata.visuals">valdata.visuals module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.visuals.TextStyle"><code class="docutils literal notranslate"><span class="pre">TextStyle</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="valdata.html#valdata.visuals.TextStyle.BLACK"><code class="docutils literal notranslate"><span class="pre">TextStyle.BLACK</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valdata.html#valdata.visuals.TextStyle.BLUE"><code class="docutils literal notranslate"><span class="pre">TextStyle.BLUE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valdata.html#valdata.visuals.TextStyle.BOLD"><code class="docutils literal notranslate"><span class="pre">TextStyle.BOLD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valdata.html#valdata.visuals.TextStyle.CYAN"><code class="docutils literal notranslate"><span class="pre">TextStyle.CYAN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valdata.html#valdata.visuals.TextStyle.GREEN"><code class="docutils literal notranslate"><span class="pre">TextStyle.GREEN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valdata.html#valdata.visuals.TextStyle.ITALIC"><code class="docutils literal notranslate"><span class="pre">TextStyle.ITALIC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valdata.html#valdata.visuals.TextStyle.MAGENTA"><code class="docutils literal notranslate"><span class="pre">TextStyle.MAGENTA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valdata.html#valdata.visuals.TextStyle.RED"><code class="docutils literal notranslate"><span class="pre">TextStyle.RED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valdata.html#valdata.visuals.TextStyle.RESET"><code class="docutils literal notranslate"><span class="pre">TextStyle.RESET</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valdata.html#valdata.visuals.TextStyle.UNDERLINE"><code class="docutils literal notranslate"><span class="pre">TextStyle.UNDERLINE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valdata.html#valdata.visuals.TextStyle.WHITE"><code class="docutils literal notranslate"><span class="pre">TextStyle.WHITE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="valdata.html#valdata.visuals.TextStyle.YELLOW"><code class="docutils literal notranslate"><span class="pre">TextStyle.YELLOW</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.visuals.b"><code class="docutils literal notranslate"><span class="pre">b()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.visuals.b_bl"><code class="docutils literal notranslate"><span class="pre">b_bl()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.visuals.b_gr"><code class="docutils literal notranslate"><span class="pre">b_gr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.visuals.b_re"><code class="docutils literal notranslate"><span class="pre">b_re()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="valdata.html#valdata.visuals.set_start"><code class="docutils literal notranslate"><span class="pre">set_start()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="further-documentation">
+<h2>Further Documentation<a class="headerlink" href="#further-documentation" title="Link to this heading">¶</a></h2>
+<p>For detailed descriptions and additional usage examples, refer to the function-specific documentation within each module of <cite>valdata</cite>. Additionally, explore our GitHub repository where we provide a comprehensive Jupyter Notebook (jupyter_testing.ipynb). This notebook includes practical examples and showcases the full functionality of valdata in action, helping you to better understand its capabilities and integration with data validation workflows.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">valdata</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="valdata.html">valdata package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="valdata.html" title="next chapter">valdata package</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, gabrielgod1.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.0.2</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
