@@ -1,0 +1,21 @@
+# .readthedocs.yaml
+
+version: 2
+
+# Define the build tool
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.9"
+
+# Define Python dependencies
+python:
+  install:
+    - method: pip
+      path: .
+    - method: pip
+    - requirements: docs/requirements.txt  # Point to your requirements file.
+
+# Sphinx-specific settings
+sphinx:
+  configuration: source/conf.py
