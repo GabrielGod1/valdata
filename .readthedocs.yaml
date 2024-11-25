@@ -12,7 +12,7 @@ build:
 python:
   install:
     - method: pip
-    - requirements: docs/requirements.txt  # Point to your requirements file.
+      path: .  # Install the package from the repository (setup reference)
 
 # Sphinx-specific settings
 sphinx:
