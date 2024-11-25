@@ -1,15 +1,16 @@
 Metadata-Version: 2.1
 Name: valdata
-Version: 0.0.1
+Version: 0.0.2
 Summary: A Python package for validating data consistency
 Home-page: https://github.com/GabrielGod1/valdata
 Author: GabrielGod1
 Author-email: altGeneric@hotmail.com
 Classifier: Programming Language :: Python :: 3
-Classifier: License :: OSI Approved :: MIT License
+Classifier: License :: OSI Approved :: BSD License
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
+License-File: LICENSE
 Requires-Dist: pandas>=1.5.2
 Requires-Dist: numpy>=1.22.4
 Requires-Dist: pyspark>=3.1.1
@@ -52,6 +53,19 @@ import valdata as vd
 
 ## Requirements
 Since Spark-based operations are part of the library functionality, you **must** have a pre-configured and working PySpark and Hadoop environment. While the `pyspark` library is included as a dependency, the actual setup of Spark and Hadoop (e.g., installing and configuring the Spark cluster) is not handled by `valdata`.
+
+## Resources and Documentation
+
+Explore the following resources to learn more about **valdata**:
+
+- ðŸ“¦ **Package Installer**: [PyPI](https://pypi.org/project/valdata/)  
+  Find the package, installation instructions, and release history.
+
+- ðŸ“– **Documentation**: [Read the Docs](https://valdata.readthedocs.io/en/latest/index.html)  
+  Comprehensive guides and usage examples.
+
+- ðŸ““ **Jupyter Notebook Example**: [jupyter_testing.ipynb](https://github.com/GabrielGod1/valdata/blob/master/jupyter_testing.ipynb)  
+  Interactive examples showcasing the main features and capabilities of the library.
 
 ## Modules Overview
 

@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 if __name__ == "__main__":  # Ensure setup.py code only runs when executed directly
   setup(
     name='valdata',
-    version='0.0.1',
+    version='0.0.2',
     packages=find_packages(),
     install_requires=[
       'pandas>=1.5.2',
@@ -22,7 +22,7 @@ if __name__ == "__main__":  # Ensure setup.py code only runs when executed direc
     python_requires='>=3.6',
     classifiers=[
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: BSD License",
     "Operating System :: OS Independent",
     ],
   )

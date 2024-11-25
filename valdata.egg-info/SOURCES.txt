@@ -1,3 +1,4 @@
+LICENSE
 README.md
 setup.py
 valdata/__init__.py
