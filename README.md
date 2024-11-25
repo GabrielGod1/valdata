@@ -41,7 +41,7 @@ Explore the following resources to learn more about **valdata**:
 - 📦 **Package Installer**: [PyPI](https://pypi.org/project/valdata/)  
   Find the package, installation instructions, and release history.
 
-- 📖 **Documentation**: [Read the Docs](https://valdata.readthedocs.io/en/latest/valdata.html)  
+- 📖 **Documentation**: [Read the Docs](https://valdata.readthedocs.io/en/latest/index.html)  
   Comprehensive guides and usage examples.
 
 - 📓 **Jupyter Notebook Example**: [jupyter_testing.ipynb](https://github.com/GabrielGod1/valdata/blob/master/jupyter_testing.ipynb)  
