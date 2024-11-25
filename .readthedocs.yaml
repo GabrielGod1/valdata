@@ -12,8 +12,6 @@ build:
 python:
   install:
     - method: pip
-      path: .
-    - method: pip
     - requirements: docs/requirements.txt  # Point to your requirements file.
 
 # Sphinx-specific settings
