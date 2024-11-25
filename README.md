@@ -34,6 +34,19 @@ import valdata as vd
 ## Requirements
 Since Spark-based operations are part of the library functionality, you **must** have a pre-configured and working PySpark and Hadoop environment. While the `pyspark` library is included as a dependency, the actual setup of Spark and Hadoop (e.g., installing and configuring the Spark cluster) is not handled by `valdata`.
 
+## Resources and Documentation
+
+Explore the following resources to learn more about **valdata**:
+
+- 📦 **Package Installer**: [PyPI](https://pypi.org/project/valdata/)  
+  Find the package, installation instructions, and release history.
+
+- 📖 **Documentation**: [Read the Docs](https://valdata.readthedocs.io/en/latest/valdata.html)  
+  Comprehensive guides and usage examples.
+
+- 📓 **Jupyter Notebook Example**: [jupyter_testing.ipynb](https://github.com/GabrielGod1/valdata/blob/master/jupyter_testing.ipynb)  
+  Interactive examples showcasing the main features and capabilities of the library.
+
 ## Modules Overview
 
 ### Auxiliary
